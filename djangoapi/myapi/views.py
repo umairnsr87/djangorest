@@ -43,8 +43,10 @@ def approvereject(request):
         mydata=request.data
         unit=np.array(list(mydata.values()))
         unit=unit.reshape(1,-1)
-        scalars=joblib.load("")
-
-    except:
+        y_pred=mdl.predict(unit)
+        new_df=pd.DataFrame(y_pred,columns=["status"])
+        return JsonResponse("Your status is {}".format(new_df),safe=False)
+    except ValueError as e:
+        return Response(e.args[0],status.HTTP_400_BAD_REQUEST)
         print("now values")
 

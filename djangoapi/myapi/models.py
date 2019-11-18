@@ -39,5 +39,6 @@ class data_for_verification(models.Model):
     race_White = models.CharField(max_length=20, choices=STATUS_CHOICES)
     sex_Male = models.CharField(max_length=20, choices=STATUS_CHOICES)
 
+
     def __str__(self):
         return str(self.firstname) + "-------" + str(self.lastname)
