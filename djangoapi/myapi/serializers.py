@@ -1,8 +1,7 @@
 from rest_framework import serializers
-from .models import data_for_verification
+from . models import approvals
 
-#make a class next
-class data_for_verification_serializer(serializers.ModelSerializer):
-    class Meta:
-        model=data_for_verification
-        fields='__all__'
+class approvalsSerializers(serializers.ModelSerializer):
+	class Meta:
+		model=approvals
+		fields='__all__'

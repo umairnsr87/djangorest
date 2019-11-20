@@ -5,7 +5,7 @@ from . import views
 from rest_framework import routers
 
 router=routers.DefaultRouter()
-router.register('myapi',views.approvalview)
+router.register('myapi',views.ApprovalsView)
 
 urlpatterns = [
     path('form/',views.myform,name='myform'),
